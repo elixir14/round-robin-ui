@@ -111,6 +111,7 @@ export async function updateRoundRobinSetting(newData) {
         Entity: "advancedroundrobin__Round_Robin_Availability",
         APIData: {
           ...availability,
+          Name: `Availability for ${newData.Name}`,
           advancedroundrobin__Timezone: newData.advancedroundrobin__Timezone,
           advancedroundrobin__Complex_Availability: JSON.stringify(
             newData.advancedroundrobin__Complex_Availability
@@ -130,6 +131,7 @@ export async function updateRoundRobinSetting(newData) {
       },
       Owner: newData.Owner,
       Created_By: newData.Created_By,
+      Name: `Availability for ${newData.Name}`,
     };
     await addNewRoundRobinAvailability(data);
   }
